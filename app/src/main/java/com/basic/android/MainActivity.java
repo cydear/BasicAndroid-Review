@@ -17,5 +17,13 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_scroller).setOnClickListener(view -> {
             startActivity(new Intent(MainActivity.this, ScrollerActivity.class));
         });
+
+        findViewById(R.id.btn_surfaceview).setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, SurfaceViewActivity.class));
+        });
+
+        findViewById(R.id.btn_svg).setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, SVGActivity.class));
+        });
     }
 }

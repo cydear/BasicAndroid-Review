@@ -24,6 +24,18 @@
         <activity
             android:name=".ScrollerActivity"
             android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".SurfaceViewActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ObjectAnimatorActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".SVGActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

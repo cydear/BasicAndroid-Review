@@ -25,5 +25,19 @@
             android:layout_marginTop="10dip"
             android:text="ScrollerActivity" />
 
+        <Button
+            android:id="@+id/btn_surfaceview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:text="SurfaceViewActivity" />
+
+        <Button
+            android:id="@+id/btn_svg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:text="SVGActivity" />
+
     </LinearLayout>
 </ScrollView>
