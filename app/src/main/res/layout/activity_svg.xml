@@ -15,6 +15,20 @@
             android:layout_height="wrap_content"
             android:src="@drawable/animated_vector1" />
 
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:src="@drawable/animated_line" />
+
+        <ImageView
+            android:id="@+id/image3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/animated_sky" />
+
     </LinearLayout>
 
 </ScrollView>
