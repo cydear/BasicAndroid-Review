@@ -36,6 +36,15 @@
         <activity
             android:name=".SVGActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".BookProviderActivity"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name=".provider.BookProvider"
+            android:authorities="com.basic.android.provider.BookProvider"
+            android:process=":provider" />
     </application>
 
 </manifest>

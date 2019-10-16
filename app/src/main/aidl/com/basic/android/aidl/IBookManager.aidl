@@ -1,8 +1,8 @@
 // IBookManager.aidl
-package com.basic.android.book;
+package com.basic.android.aidl;
 
 // Declare any non-default types here with import statements
-import com.basic.android.book.Book;
+import com.basic.android.aidl.Book;
 
 interface IBookManager {
     List<Book> getBookList();

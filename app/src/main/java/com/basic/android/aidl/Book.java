@@ -1,4 +1,4 @@
-package com.basic.android.book;
+package com.basic.android.aidl;
 
 import android.os.Parcel;
 import android.os.Parcelable;
