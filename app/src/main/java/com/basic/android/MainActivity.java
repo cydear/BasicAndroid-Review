@@ -28,5 +28,9 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_svg).setOnClickListener(view -> {
             startActivity(new Intent(MainActivity.this, SVGActivity.class));
         });
+
+        findViewById(R.id.btn_pulldown).setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, PullDownAnimationActivity.class));
+        });
     }
 }

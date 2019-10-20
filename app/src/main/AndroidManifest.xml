@@ -41,6 +41,10 @@
             android:name=".BookProviderActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".PullDownAnimationActivity"
+            android:screenOrientation="portrait" />
+
         <provider
             android:name=".provider.BookProvider"
             android:authorities="com.basic.android.provider.BookProvider"

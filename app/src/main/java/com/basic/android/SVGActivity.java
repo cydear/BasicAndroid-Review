@@ -30,5 +30,9 @@ public class SVGActivity extends AppCompatActivity {
         findViewById(R.id.image3).setOnClickListener(view -> {
             ((Animatable) ((ImageView) view).getDrawable()).start();
         });
+
+        findViewById(R.id.image4).setOnClickListener(view -> {
+            ((Animatable) ((ImageView) view).getDrawable()).start();
+        });
     }
 }
