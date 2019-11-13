@@ -60,6 +60,7 @@ public class OkHttpActivity extends AppCompatActivity implements View.OnClickLis
             downAysnFile();
         } else if (_id == R.id.btn_retrofit) {
             getIpInformation("59.108.54.37");
+            getIpInformation();
         }
     }
 
@@ -86,6 +87,25 @@ public class OkHttpActivity extends AppCompatActivity implements View.OnClickLis
                 ToastUtil.showLongCenter(getApplicationContext(), t.getMessage());
             }
         });
+    }
+
+    private void getIpInformation() {
+        RetrofitManager.getInstance()
+                .create(IpService.class)
+                .getIpMsg("176.28.0.200")
+                .enqueue(new retrofit2.Callback<IpModel>() {
+                    @Override
+                    public void onResponse(retrofit2.Call<IpModel> call, retrofit2.Response<IpModel> response) {
+                        String country = response.body().getData().getCountry();
+                        LogUtil.showLog("country:" + country);
+                        ToastUtil.showLongCenter(getApplicationContext(), country);
+                    }
+
+                    @Override
+                    public void onFailure(retrofit2.Call<IpModel> call, Throwable t) {
+                        ToastUtil.showLongCenter(getApplicationContext(), t.getMessage());
+                    }
+                });
     }
 
     //Get请求
