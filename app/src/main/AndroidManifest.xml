@@ -60,6 +60,14 @@
             android:name=".plugin.SubActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".eventbus.EventBusActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".eventbus.ObserverActivity"
+            android:screenOrientation="portrait" />
+
         <provider
             android:name=".provider.BookProvider"
             android:authorities="com.basic.android.provider.BookProvider"

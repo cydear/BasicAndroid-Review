@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.basic.android.BaseViewApplication;
 import com.basic.android.R;
 import com.basic.android.utils.LogUtil;
 import com.basic.android.utils.ToastUtil;
@@ -16,6 +17,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import okhttp3.Cache;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
@@ -108,9 +110,17 @@ public class OkHttpActivity extends AppCompatActivity implements View.OnClickLis
                 });
     }
 
+    //缓存目录
+    private static final String CACHE_DIECTORY = BaseViewApplication.mInstance.getExternalCacheDir().getPath();
+
     //Get请求
     private void getAsynHttp() {
-        OkHttpClient okHttpClient = new OkHttpClient();
+
+        //创建缓存的目录以及缓存的大小
+        Cache cache = new Cache(new File(CACHE_DIECTORY, "baseview"), 1024 * 1024);
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .cache(cache)
+                .build();
         Request.Builder requestBuilder = new Request.Builder()
                 .url("http://www.baidu.com");
         //可以省略，默认是GET请求
