@@ -76,6 +76,10 @@
             android:name=".material.ToolbarActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".material.CoordinatorLayoutActivity"
+            android:screenOrientation="portrait" />
+
         <provider
             android:name=".provider.BookProvider"
             android:authorities="com.basic.android.provider.BookProvider"

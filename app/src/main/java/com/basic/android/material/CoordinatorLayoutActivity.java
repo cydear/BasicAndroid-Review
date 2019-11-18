@@ -1,0 +1,64 @@
+package com.basic.android.material;
+
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+
+import com.basic.android.R;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class CoordinatorLayoutActivity extends AppCompatActivity {
+    private TabLayout mTabLayout;
+    private ViewPager mViewPager;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_coordinator_layout);
+        mTabLayout = findViewById(R.id.tabs);
+        mViewPager = findViewById(R.id.viewpager);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        final ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        initViewPager();
+    }
+
+    private void initViewPager() {
+        List<String> titles = new ArrayList<String>();
+        titles.add("精选");
+        titles.add("体育");
+        titles.add("巴萨");
+        titles.add("购物");
+        titles.add("明星");
+        titles.add("视频");
+        titles.add("健康");
+        titles.add("励志");
+        titles.add("图文");
+        titles.add("本地");
+        titles.add("动漫");
+        titles.add("搞笑");
+        titles.add("精选");
+        for (int i = 0; i < titles.size(); i++) {
+            mTabLayout.addTab(mTabLayout.newTab().setText(titles.get(i)));
+        }
+        List<Fragment> fragments = new ArrayList<>();
+        for (int i = 0; i < titles.size(); i++) {
+            fragments.add(new ListFragment());
+        }
+        FragmentAdapter mAdapter = new FragmentAdapter(getSupportFragmentManager(), fragments, titles);
+        //给ViewPager设置适配器
+        mViewPager.setAdapter(mAdapter);
+        //将ViewPager和mTabLayout关联起来
+        mTabLayout.setupWithViewPager(mViewPager);
+        //设置TabLayout适配器
+        //mTabLayout.setTabsFromPagerAdapter(mAdapter);
+    }
+}

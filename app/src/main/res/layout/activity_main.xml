@@ -67,5 +67,12 @@
             android:layout_marginTop="10dip"
             android:text="ToolbarActivity" />
 
+        <Button
+            android:id="@+id/btn_coordianator_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:text="CoordinatorLayoutActivity" />
+
     </LinearLayout>
 </ScrollView>
