@@ -5,6 +5,9 @@ import android.os.Messenger;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.basic.android.material.CoordinatorActivity;
+import com.basic.android.material.ToolbarActivity;
+
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +34,14 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.btn_pulldown).setOnClickListener(view -> {
             startActivity(new Intent(MainActivity.this, PullDownAnimationActivity.class));
+        });
+
+        findViewById(R.id.btn_coordinator).setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, CoordinatorActivity.class));
+        });
+
+        findViewById(R.id.btn_toolbar).setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, ToolbarActivity.class));
         });
     }
 }
