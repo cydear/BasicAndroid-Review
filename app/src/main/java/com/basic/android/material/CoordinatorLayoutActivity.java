@@ -2,12 +2,18 @@ package com.basic.android.material;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.basic.android.R;
 
@@ -17,6 +23,7 @@ import java.util.List;
 public class CoordinatorLayoutActivity extends AppCompatActivity {
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
+    private DrawerLayout mDrawerLayout;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,7 +34,17 @@ public class CoordinatorLayoutActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         final ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
         actionBar.setDisplayHomeAsUpEnabled(true);
+        mDrawerLayout = findViewById(R.id.drawerlayout);
+        NavigationView navigationView = findViewById(R.id.nv_main_navigation);
+        if (navigationView != null) {
+            navigationView.setNavigationItemSelectedListener(menuItem -> {
+                menuItem.setCheckable(true);
+                mDrawerLayout.closeDrawers();
+                return true;
+            });
+        }
         initViewPager();
     }
 
@@ -60,5 +77,21 @@ public class CoordinatorLayoutActivity extends AppCompatActivity {
         mTabLayout.setupWithViewPager(mViewPager);
         //设置TabLayout适配器
         //mTabLayout.setTabsFromPagerAdapter(mAdapter);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_overaction, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                mDrawerLayout.openDrawer(GravityCompat.START);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

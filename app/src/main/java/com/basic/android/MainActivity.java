@@ -5,6 +5,7 @@ import android.os.Messenger;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.basic.android.material.CollapsingToolbarActivity;
 import com.basic.android.material.CoordinatorActivity;
 import com.basic.android.material.CoordinatorLayoutActivity;
 import com.basic.android.material.ToolbarActivity;
@@ -47,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.btn_coordianator_layout).setOnClickListener(view -> {
             startActivity(new Intent(MainActivity.this, CoordinatorLayoutActivity.class));
+        });
+
+        findViewById(R.id.btn_collapsing_toolbar_layout).setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, CollapsingToolbarActivity.class));
         });
     }
 }

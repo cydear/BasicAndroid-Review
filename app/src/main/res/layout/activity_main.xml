@@ -74,5 +74,12 @@
             android:layout_marginTop="10dip"
             android:text="CoordinatorLayoutActivity" />
 
+        <Button
+            android:id="@+id/btn_collapsing_toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:text="CollapsingToolbarActivity" />
+
     </LinearLayout>
 </ScrollView>

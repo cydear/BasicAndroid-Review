@@ -30,7 +30,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         final View view = viewHolder.mView;
         view.setOnClickListener(v -> {
-
+            mContext.startActivity(new Intent(mContext, CollapsingToolbarActivity.class));
         });
     }
 
